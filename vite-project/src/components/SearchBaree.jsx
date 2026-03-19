@@ -17,8 +17,8 @@ export default function SearchBaree() {
 
   const fetchData = async () => {
     const result = await fetchCities(prefix);
-    if(result.cod != 200 || result.cod != 200){
-      return toast.error(data.message)
+    if(result.length === 0){
+      return toast.error(result.message)
     } 
     setCities(result);
   };
